@@ -42,12 +42,10 @@
 
 -(NSArray *)items
 {
-
     NSArray *newItems = [DataSource sharedInstance].mediaItems;
     return newItems;
 
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
