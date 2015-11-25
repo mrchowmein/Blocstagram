@@ -135,7 +135,6 @@ static NSParagraphStyle *paragraphStyle;
     // #3 - Make an attributed string, with the "username" bold
     NSMutableAttributedString *mutableUsernameAndCaptionString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : [lightFont fontWithSize:usernameFontSize], NSParagraphStyleAttributeName : paragraphStyle}];
     
-    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:@(4.0) range:NSMakeRange(0, mutableUsernameAndCaptionString.length)];
     
     // #4
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
@@ -166,14 +165,6 @@ static NSParagraphStyle *paragraphStyle;
         
         [commentString appendAttributedString:oneCommentString];
         
-        NSInteger index = [self.mediaItem.comments indexOfObject:comment];
-        
-        if(index == 0) {
-        
-            NSRange textRange =[ baseString rangeOfString:comment.text];
-            [oneCommentString addAttribute:NSForegroundColorAttributeName value:orangeText range:textRange];
-            
-        }
 
         
     }

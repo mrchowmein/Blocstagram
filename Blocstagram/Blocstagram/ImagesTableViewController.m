@@ -41,16 +41,10 @@
 
 #pragma mark - Table view data source
 
--(NSArray *)items
-{
-    NSArray *newItems = [DataSource sharedInstance].mediaItems;
-    return newItems;
-
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self items].count;
+    return [DataSource sharedInstance].mediaItems.count;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
