@@ -69,6 +69,8 @@ static NSParagraphStyle *paragraphStyle;
     mutableParagraphStyle.paragraphSpacingBefore = 5;
     
     paragraphStyle = mutableParagraphStyle;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -118,17 +120,29 @@ static NSParagraphStyle *paragraphStyle;
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
         [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
         
-        [commentString appendAttributedString:oneCommentString];
-        
         NSInteger index = [self.mediaItem.comments indexOfObject:comment];
+        NSMutableParagraphStyle *paragraphRight = [[NSMutableParagraphStyle alloc] init];
+        [paragraphRight setAlignment:NSTextAlignmentRight];
         
         if(index == 0) {
         
             NSRange textRange =[ baseString rangeOfString:comment.text];
-            [oneCommentString addAttribute:NSForegroundColorAttributeName value:orangeText range:textRange];
-            
+           [oneCommentString addAttribute:NSForegroundColorAttributeName value:orangeText range:textRange];
+        
         }
+        
+        if (index % 2 == 0)
+            
+        {
+           
+            NSMutableParagraphStyle *paragraphRight = [[NSMutableParagraphStyle alloc] init];
+            paragraphRight.alignment = NSTextAlignmentRight;
+            
+            [oneCommentString addAttribute:NSParagraphStyleAttributeName value:paragraphRight range:NSMakeRange(0, [oneCommentString length])];
 
+        }
+        
+[commentString appendAttributedString:oneCommentString];
         
     }
     
