@@ -17,7 +17,6 @@
 @property  (nonatomic, strong) UILabel *usernameAndCaptionLabel;
 @property (nonatomic, strong) UILabel *commentLabel;
 @property (nonatomic, strong) NSLayoutConstraint *imageHeightConstraint;
-@property (nonatomic, strong) NSLayoutConstraint *imageWidthConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 
@@ -28,7 +27,7 @@ static UIFont *boldFont;
 static UIColor *usernameLabelGray;
 static UIColor *commentLabelGray;
 static UIColor *linkColor;
-static UIColor *orangeText;
+
 static NSParagraphStyle *paragraphStyle;
 
 @implementation MediaTableViewCell
@@ -75,13 +74,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                    constant:100];
         self.imageHeightConstraint.identifier = @"Image height constraint";
         
-        self.imageWidthConstraint = [NSLayoutConstraint constraintWithItem:_mediaImageView
-                                                                  attribute:NSLayoutAttributeWidth
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:nil
-                                                                  attribute:NSLayoutAttributeNotAnAttribute
-                                                                 multiplier:1
-                                     constant:100];
+       
         
         self.usernameAndCaptionLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_usernameAndCaptionLabel
                                                                                     attribute:NSLayoutAttributeHeight
@@ -101,7 +94,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                           constant:100];
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
-        [self.contentView addConstraints:@[self.imageHeightConstraint, self.imageWidthConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
+        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
 
 
     }
@@ -115,7 +108,7 @@ static NSParagraphStyle *paragraphStyle;
     usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
     commentLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1]; /*#e5e5e5*/
     linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1]; /*#58506d*/
-    orangeText = [UIColor colorWithRed:.98 green:.8 blue:0.6 alpha:1];
+    
     
     NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle alloc] init];
     mutableParagraphStyle.headIndent = 20.0;
@@ -195,8 +188,8 @@ static NSParagraphStyle *paragraphStyle;
     
     self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
     self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
-    self.imageHeightConstraint.constant = 100;
-    self.imageWidthConstraint.constant = 100;
+    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);;
+    
     
     // Hide the line between cells
     self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(self.bounds)/2.0, 0, CGRectGetWidth(self.bounds)/2.0);
