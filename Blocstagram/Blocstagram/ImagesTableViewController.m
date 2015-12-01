@@ -131,14 +131,18 @@
 
 
 // Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
         [[DataSource sharedInstance] deleteMediaItem:item];
+        
+        
     }
 }
+ 
 
 /*
 // Override to support rearranging the table view.
