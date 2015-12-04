@@ -28,6 +28,7 @@
 		ED793EB21BFD871A00E3C27E /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED793EA81BFD871A00E3C27E /* 9.jpg */; };
 		ED793EB31BFD871A00E3C27E /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED793EA91BFD871A00E3C27E /* 10.jpg */; };
 		ED793EB61BFEC5D300E3C27E /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED793EB51BFEC5D300E3C27E /* ImagesTableViewController.m */; };
+		ED865C161C11316400E94866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED865C151C11316400E94866 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		ED793EA91BFD871A00E3C27E /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		ED793EB41BFEC5D300E3C27E /* ImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
 		ED793EB51BFEC5D300E3C27E /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		ED865C141C11316400E94866 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		ED865C151C11316400E94866 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 		ED793E781BFD858200E3C27E /* Blocstagram */ = {
 			isa = PBXGroup;
 			children = (
+				ED865C141C11316400E94866 /* LoginViewController.h */,
+				ED865C151C11316400E94866 /* LoginViewController.m */,
 				ED5DBDCF1C0638A7001A5AE1 /* MediaTableViewCell.h */,
 				ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */,
 				ED73337C1C04008600C9C630 /* DataSource.h */,
@@ -293,6 +298,7 @@
 				ED5DBDD11C0638A7001A5AE1 /* MediaTableViewCell.m in Sources */,
 				ED7333781C03FDC300C9C630 /* Media.m in Sources */,
 				ED793E7F1BFD858200E3C27E /* AppDelegate.m in Sources */,
+				ED865C161C11316400E94866 /* LoginViewController.m in Sources */,
 				ED73337E1C04008600C9C630 /* DataSource.m in Sources */,
 				ED793E7C1BFD858200E3C27E /* main.m in Sources */,
 				ED793EB61BFEC5D300E3C27E /* ImagesTableViewController.m in Sources */,
