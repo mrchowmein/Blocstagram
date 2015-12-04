@@ -9,9 +9,11 @@
 #import "LoginViewController.h"
 #import "DataSource.h"
 
+
 @interface LoginViewController () <UIWebViewDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
+
 
 @end
 
@@ -22,6 +24,8 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 - (NSString *)redirectURI {
     return @"http://bloc.io";
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +46,15 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Back"
+                                   style:UIBarButtonItemStylePlain
+                                   target:webView
+                                   action:@selector(goBack)];
+    self.navigationItem.rightBarButtonItem = backButton;
+    
+    
     
 }
 
