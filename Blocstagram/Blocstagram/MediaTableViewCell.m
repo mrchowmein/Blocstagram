@@ -120,7 +120,7 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    [super setSelected:NO animated:animated];
 
     // Configure the view for the selected state
 }
@@ -200,6 +200,10 @@ static NSParagraphStyle *paragraphStyle;
     self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(self.bounds)/2.0, 0, CGRectGetWidth(self.bounds)/2.0);
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:NO animated:animated];
+}
+
 - (void) setMediaItem:(Media *)mediaItem {
     _mediaItem = mediaItem;
     self.mediaImageView.image = _mediaItem.image;
@@ -223,5 +227,7 @@ static NSParagraphStyle *paragraphStyle;
     // The height will be wherever the bottom of the comments label is
     return CGRectGetMaxY(layoutCell.commentLabel.frame);
 }
+
+
 
 @end
