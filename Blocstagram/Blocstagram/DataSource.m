@@ -33,7 +33,7 @@
 @implementation DataSource
 
 + (NSString *) instagramClientID {
-    return @"d8edb53fcd1e4fc69f70f7d39703ad7b";
+    return @"d1e9ab5738c046089d9070c7e5790cb4";
 }
 
 + (instancetype) sharedInstance {
