@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		067E6A6300D2FB8B84807756 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD960049EE2789A9F23A0B9 /* libPods.a */; };
+		ED389F8D1C1A6C2E005D4080 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED389F8C1C1A6C2E005D4080 /* MediaFullScreenViewController.m */; };
 		ED5DBDD11C0638A7001A5AE1 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */; };
 		ED7333751C03FD6400C9C630 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7333741C03FD6400C9C630 /* User.m */; };
 		ED7333781C03FDC300C9C630 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7333771C03FDC300C9C630 /* Media.m */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		4AC1614E80CF4DF9A9BDD434 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C89DC9EAA13F562B9DBE8E90 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		ED389F8B1C1A6C2E005D4080 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
+		ED389F8C1C1A6C2E005D4080 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		ED5DBDCF1C0638A7001A5AE1 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 		ED7333731C03FD6400C9C630 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				ED793E861BFD858200E3C27E /* Images.xcassets */,
 				ED793E881BFD858200E3C27E /* LaunchScreen.xib */,
 				ED793E791BFD858200E3C27E /* Supporting Files */,
+				ED389F8B1C1A6C2E005D4080 /* MediaFullScreenViewController.h */,
+				ED389F8C1C1A6C2E005D4080 /* MediaFullScreenViewController.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED389F8D1C1A6C2E005D4080 /* MediaFullScreenViewController.m in Sources */,
 				ED7333751C03FD6400C9C630 /* User.m in Sources */,
 				ED73337B1C03FE4400C9C630 /* Comment.m in Sources */,
 				ED5DBDD11C0638A7001A5AE1 /* MediaTableViewCell.m in Sources */,
