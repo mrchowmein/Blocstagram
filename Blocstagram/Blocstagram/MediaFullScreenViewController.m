@@ -32,6 +32,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+  
+    
+
+     
     // #1
     self.scrollView = [UIScrollView new];
     self.scrollView.delegate = self;
@@ -43,10 +48,12 @@
     self.imageView = [UIImageView new];
     self.imageView.image = self.media.image;
     
+    
     [self.scrollView addSubview:self.imageView];
     
     // #3
     self.scrollView.contentSize = self.media.image.size;
+
     
     
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
@@ -107,6 +114,8 @@
 - (void)centerScrollView {
     [self.imageView sizeToFit];
     
+    
+    
     CGSize boundsSize = self.scrollView.bounds.size;
     CGRect contentsFrame = self.imageView.frame;
     
@@ -123,7 +132,36 @@
     }
     
     self.imageView.frame = contentsFrame;
+    
+    //share button
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    [shareButton sizeToFit];
+    shareButton.center = CGPointMake(280, 60);
+    
+    
+    [shareButton addTarget:self action:@selector(sharePress:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:shareButton];
+
+    
 }
+
+    
+
+- (void) sharePress:(UIButton *)shareButton {
+    
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
+
+    NSLog(@"it works");
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
