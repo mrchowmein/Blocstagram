@@ -138,6 +138,10 @@
     if (self.accessToken) {
         // only try to get the data if there's an access token
       
+        NSMutableDictionary *mutableParameters = [@{@"access_token": self.accessToken} mutableCopy];
+        
+        [mutableParameters addEntriesFromDictionary:parameters];
+        
         [self.instagramOperationManager GET:@"users/self/feed"
                                  parameters:mutableParameters
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {

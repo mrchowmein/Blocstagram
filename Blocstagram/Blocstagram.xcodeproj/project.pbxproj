@@ -50,7 +50,6 @@
 		ED389F8C1C1A6C2E005D4080 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		ED5DBDCF1C0638A7001A5AE1 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
-		ED6847391C1FBC3C000A1050 /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
 		ED7333731C03FD6400C9C630 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		ED7333741C03FD6400C9C630 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		ED7333761C03FDC300C9C630 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 				ED7333761C03FDC300C9C630 /* Media.h */,
 				ED7333771C03FDC300C9C630 /* Media.m */,
 				ED7333731C03FD6400C9C630 /* User.h */,
-				ED6847391C1FBC3C000A1050 /* AFNetworking.h */,
 				ED7333741C03FD6400C9C630 /* User.m */,
 				ED793EB41BFEC5D300E3C27E /* ImagesTableViewController.h */,
 				ED793EB51BFEC5D300E3C27E /* ImagesTableViewController.m */,
