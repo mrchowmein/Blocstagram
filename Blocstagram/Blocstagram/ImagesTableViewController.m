@@ -157,7 +157,8 @@
 
 - (void) cell:(MediaTableViewCell *)cell didTwoTouchImageView:(UIImageView *)imageView {
  
-    [[DataSource sharedInstance] requestNewItemsWithCompletionHandler:nil];
+    [[DataSource sharedInstance] downloadImageForMediaItem:nil];
+    
     NSLog(@"reload");
 }
 
