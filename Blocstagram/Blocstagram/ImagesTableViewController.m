@@ -157,13 +157,14 @@
 
 - (void) cell:(MediaTableViewCell *)cell didTwoTouchImageView:(UIImageView *)imageView {
  
-    [[DataSource sharedInstance] downloadImageForMediaItem:nil];
+    [[DataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
     
-    NSLog(@"reload");
+    NSLog(@"twofinger");
 }
 
 
 - (void) cell:(MediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
+    
     
     MediaFullScreenViewController *fullScreenVC = [[MediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
    [self presentViewController:fullScreenVC animated:YES completion:nil];

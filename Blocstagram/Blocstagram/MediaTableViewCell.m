@@ -62,8 +62,8 @@ static NSParagraphStyle *paragraphStyle;
         
         
         self.twoTouchGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoTouch:)];
-        self.twoTouchGestureRecognizer.numberOfTouchesRequired = 2;
         self.twoTouchGestureRecognizer.delegate = self;
+        self.twoTouchGestureRecognizer.numberOfTouchesRequired = 2;
         [self.mediaImageView addGestureRecognizer:self.twoTouchGestureRecognizer];
 
         
@@ -258,8 +258,6 @@ static NSParagraphStyle *paragraphStyle;
 
 - (void) twoTouch:(UITapGestureRecognizer *)sender {
     
-
-        NSLog(@"it works");
         [self.delegate cell:self didTwoTouchImageView:self.mediaImageView];
     
     
