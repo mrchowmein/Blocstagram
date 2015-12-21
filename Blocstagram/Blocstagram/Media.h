@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LikeButton.h"
 
 @class User;
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) NSArray *comments;
+@property (nonatomic, assign) LikeState likeState;
+
 - (instancetype) initWithDictionary:(NSDictionary *)mediaDictionary;
 
 @end

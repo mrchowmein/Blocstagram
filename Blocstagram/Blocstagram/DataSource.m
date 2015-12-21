@@ -37,7 +37,7 @@
 @implementation DataSource
 
 + (NSString *) instagramClientID {
-    return @"d1e9ab5738c046089d9070c7e5790cb4";
+    return @"d8edb53fcd1e4fc69f70f7d39703ad7b";
 }
 
 + (instancetype) sharedInstance {
@@ -99,6 +99,49 @@
     }];
 }
 
+#pragma mark - Liking Media Items
+
+- (void) toggleLikeOnMediaItem:(Media *)mediaItem withCompletionHandler:(void (^)(void))completionHandler {
+    NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
+    NSDictionary *parameters = @{@"access_token": self.accessToken};
+    
+    if (mediaItem.likeState == LikeStateNotLiked) {
+        
+        mediaItem.likeState = LikeStateLiking;
+        
+        [self.instagramOperationManager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            mediaItem.likeState = LikeStateLiked;
+            
+            if (completionHandler) {
+                completionHandler();
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            mediaItem.likeState = LikeStateNotLiked;
+            
+            if (completionHandler) {
+                completionHandler();
+            }
+        }];
+        
+    } else if (mediaItem.likeState == LikeStateLiked) {
+        
+        mediaItem.likeState = LikeStateUnliking;
+        
+        [self.instagramOperationManager DELETE:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            mediaItem.likeState = LikeStateNotLiked;
+            
+            if (completionHandler) {
+                completionHandler();
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            mediaItem.likeState = LikeStateLiked;
+            
+            if (completionHandler) {
+                completionHandler();
+            }
+        }];
+    }
+}
 
 #pragma mark - Key/Value Observing
 
@@ -142,7 +185,7 @@
         
         [mutableParameters addEntriesFromDictionary:parameters];
         
-        [self.instagramOperationManager GET:@"users/self/feed"
+        [self.instagramOperationManager GET:@"users/self/media/recent/"
                                  parameters:mutableParameters
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         if ([responseObject isKindOfClass:[NSDictionary class]]) {
