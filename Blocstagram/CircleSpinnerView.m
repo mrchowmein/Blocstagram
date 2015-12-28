@@ -125,9 +125,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.strokeThickness = 1;
+        self.strokeThickness = 2;
         self.radius = 12;
-        self.strokeColor = [UIColor purpleColor];
+        self.strokeColor = [UIColor yellowColor];
     }
     return self;
 }

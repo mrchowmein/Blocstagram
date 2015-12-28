@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, assign) LikeState likeState;
+@property (nonatomic, strong) NSString *likeCount;
 
 - (instancetype) initWithDictionary:(NSDictionary *)mediaDictionary;
 
