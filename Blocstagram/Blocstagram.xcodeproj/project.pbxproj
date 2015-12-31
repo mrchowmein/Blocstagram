@@ -33,6 +33,7 @@
 		ED7F489E1C27C5490018AD37 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F489D1C27C5480018AD37 /* CircleSpinnerView.m */; };
 		ED7F48A11C27D36A0018AD37 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F48A01C27D36A0018AD37 /* LikeButton.m */; };
 		ED865C161C11316400E94866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED865C151C11316400E94866 /* LoginViewController.m */; };
+		ED955E7D1C35041600429530 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED955E7C1C35041600429530 /* ComposeCommentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		ED7F48A01C27D36A0018AD37 /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
 		ED865C141C11316400E94866 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		ED865C151C11316400E94866 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ED955E7B1C35041600429530 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
+		ED955E7C1C35041600429530 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		FAD960049EE2789A9F23A0B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,6 +179,8 @@
 				ED389F8C1C1A6C2E005D4080 /* MediaFullScreenViewController.m */,
 				ED7F489F1C27D36A0018AD37 /* LikeButton.h */,
 				ED7F48A01C27D36A0018AD37 /* LikeButton.m */,
+				ED955E7B1C35041600429530 /* ComposeCommentView.h */,
+				ED955E7C1C35041600429530 /* ComposeCommentView.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				ED865C161C11316400E94866 /* LoginViewController.m in Sources */,
 				ED7F48A11C27D36A0018AD37 /* LikeButton.m in Sources */,
 				ED73337E1C04008600C9C630 /* DataSource.m in Sources */,
+				ED955E7D1C35041600429530 /* ComposeCommentView.m in Sources */,
 				ED793E7C1BFD858200E3C27E /* main.m in Sources */,
 				ED793EB61BFEC5D300E3C27E /* ImagesTableViewController.m in Sources */,
 			);
