@@ -74,12 +74,17 @@
                 NSError *error = nil;
                 AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
                 if (!input) {
+                    
+                    [self alert:error.localizedDescription message:error.localizedRecoverySuggestion];
+                    
+                    /*
                     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion preferredStyle:UIAlertControllerStyleAlert];
                     [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                         [self.delegate cameraViewController:self didCompleteWithImage:nil];
                     }]];
                     
                     [self presentViewController:alertVC animated:YES completion:nil];
+                     */
                 } else {
                     // #7
                     
@@ -104,6 +109,22 @@
             }
         });
     }];
+}
+
+-(void) alert:(NSString *)title message:(NSString *)message {
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
+                                                                     message:message
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [self.delegate cameraViewController:self didCompleteWithImage:nil];
+        
+        [self presentViewController:alertVC animated:YES completion:nil];
+        
+    }]];
+
+    
 }
 
 - (void) addViewsToViewHierarchy {
@@ -265,8 +286,9 @@
             UIImage *image = [UIImage imageWithData:imageData scale:[UIScreen mainScreen].scale];
             
             // #11
-            image = [image imageWithFixedOrientation];
-            image = [image imageResizedToMatchAspectRatioOfSize:self.captureVideoPreviewLayer.bounds.size];
+            
+            //image = [image imageWithFixedOrientation];
+            //image = [image imageResizedToMatchAspectRatioOfSize:self.captureVideoPreviewLayer.bounds.size];
             
             // #12
             UIView *leftLine = self.verticalLines.firstObject;
@@ -282,21 +304,29 @@
             CGRect cropRect = gridRect;
             cropRect.origin.x = (CGRectGetMinX(gridRect) + (image.size.width - CGRectGetWidth(gridRect)) / 2);
             
-            image = [image imageCroppedToRect:cropRect];
+            //image = [image imageCroppedToRect:cropRect];
+            
+            image = [image imageByScalingToSize:self.self.captureVideoPreviewLayer.bounds.size andCroppingWithRect:cropRect];
             
             // #13
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.delegate cameraViewController:self didCompleteWithImage:image];
             });
         } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
+            
+             dispatch_async(dispatch_get_main_queue(), ^{
+               [self alert:error.localizedDescription message:error.localizedRecoverySuggestion];
+                 /*
+                [self alert:error.localizedDescription message:error.localizedRecoverySuggestion];
+                
                 UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion preferredStyle:UIAlertControllerStyleAlert];
                 [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                    [self.delegate cameraViewController:self didCompleteWithImage:nil];
-                }]];
+                   [self.delegate cameraViewController:self didCompleteWithImage:nil];
+               }]];
+            */
                 
-                [self presentViewController:alertVC animated:YES completion:nil];
             });
+            
             
         }
     }];
