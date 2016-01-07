@@ -7,6 +7,7 @@
 //
 
 #import "PostToInstagramViewController.h"
+#import "NewCollectionViewCell.h"
 
 @interface PostToInstagramViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIDocumentInteractionControllerDelegate>
 
@@ -104,7 +105,7 @@
                  self.navigationItem.rightBarButtonItem = self.sendBarButton;
              }
              
-             [self.filterCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+             [self.filterCollectionView registerClass:[NewCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
              
              self.view.backgroundColor = [UIColor whiteColor];
              self.filterCollectionView.backgroundColor = [UIColor whiteColor];
@@ -141,37 +142,18 @@
          }
 
          - (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-             UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+            
+             NewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        
+             return cell;
              
-             static NSInteger imageViewTag = 1000;
-             static NSInteger labelTag = 1001;
-             
-             UIImageView *thumbnail = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
-             UILabel *label = (UILabel *)[cell.contentView viewWithTag:labelTag];
              
              UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.filterCollectionView.collectionViewLayout;
              CGFloat thumbnailEdgeSize = flowLayout.itemSize.width;
              
-             if (!thumbnail) {
-                 thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, thumbnailEdgeSize, thumbnailEdgeSize)];
-                 thumbnail.contentMode = UIViewContentModeScaleAspectFill;
-                 thumbnail.tag = imageViewTag;
-                 thumbnail.clipsToBounds = YES;
-                 
-                 [cell.contentView addSubview:thumbnail];
-             }
+             [cell configureCollectionView:thumbnailEdgeSize filterImage:self.filterImages[indexPath.row] filterTitle:self.filterTitles[indexPath.row]];
              
-             if (!label) {
-                 label = [[UILabel alloc] initWithFrame:CGRectMake(0, thumbnailEdgeSize, thumbnailEdgeSize, 20)];
-                 label.tag = labelTag;
-                 label.textAlignment = NSTextAlignmentCenter;
-                 label.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:10];
-                 [cell.contentView addSubview:label];
-             }
-             
-             thumbnail.image = self.filterImages[indexPath.row];
-             label.text = self.filterTitles[indexPath.row];
-             
+
              return cell;
          }
          
@@ -214,6 +196,17 @@
                  if (noirFilter) {
                      [noirFilter setValue:sourceCIImage forKey:kCIInputImageKey];
                      [self addCIImageToCollectionView:noirFilter.outputImage withFilterTitle:NSLocalizedString(@"Noir", @"Noir Filter")];
+                 }
+             }];
+             
+             // Chrome filter
+             
+             [self.photoFilterOperationQueue addOperationWithBlock:^{
+                 CIFilter *chromeFilter = [CIFilter filterWithName:@"CIPhotoEffectChrome"];
+                 
+                 if (chromeFilter) {
+                     [chromeFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+                     [self addCIImageToCollectionView:chromeFilter.outputImage withFilterTitle:NSLocalizedString(@"Chrome", @"Chrome Filter")];
                  }
              }];
              
@@ -283,6 +276,29 @@
                      }
                      
                      [self addCIImageToCollectionView:result withFilterTitle:NSLocalizedString(@"Drunk", @"Drunk Filter")];
+                 }
+             }];
+             
+             // Crazy filter
+             
+             [self.photoFilterOperationQueue addOperationWithBlock:^{
+                 CIFilter *drunkFilter = [CIFilter filterWithName:@"CIConvolution5X5"];
+                 CIFilter *posFilter = [CIFilter filterWithName:@"CIColorPosterize"];
+                 
+                 if (drunkFilter) {
+                     [drunkFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+                     
+                     CIVector *drunkVector = [CIVector vectorWithString:@"[0.5 0 0 0 0 0 0 0 0 0.05 0 0 0 0 0 0 0 0 0 0 0.05 0 0 0 0.5]"];
+                     [drunkFilter setValue:drunkVector forKeyPath:@"inputWeights"];
+                     
+                     CIImage *result = drunkFilter.outputImage;
+                     
+                     if (posFilter) {
+                         [posFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+                         result = posFilter.outputImage;
+                     }
+                     
+                     [self addCIImageToCollectionView:result withFilterTitle:NSLocalizedString(@"Crazy", @"Crazy Filter")];
                  }
              }];
              

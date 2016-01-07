@@ -36,6 +36,7 @@
 		ED793EB61BFEC5D300E3C27E /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED793EB51BFEC5D300E3C27E /* ImagesTableViewController.m */; };
 		ED7F489E1C27C5490018AD37 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F489D1C27C5480018AD37 /* CircleSpinnerView.m */; };
 		ED7F48A11C27D36A0018AD37 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F48A01C27D36A0018AD37 /* LikeButton.m */; };
+		ED85700E1C3DED5B004F9610 /* NewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85700D1C3DED5B004F9610 /* NewCollectionViewCell.m */; };
 		ED865C161C11316400E94866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED865C151C11316400E94866 /* LoginViewController.m */; };
 		ED955E7D1C35041600429530 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED955E7C1C35041600429530 /* ComposeCommentView.m */; };
 		ED99433B1C3B10FB00466295 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = ED99433A1C3B10FB00466295 /* CameraToolbar.m */; };
@@ -102,6 +103,8 @@
 		ED7F489D1C27C5480018AD37 /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleSpinnerView.m; path = ../CircleSpinnerView.m; sourceTree = "<group>"; };
 		ED7F489F1C27D36A0018AD37 /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
 		ED7F48A01C27D36A0018AD37 /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
+		ED85700C1C3DED5B004F9610 /* NewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCollectionViewCell.h; sourceTree = "<group>"; };
+		ED85700D1C3DED5B004F9610 /* NewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCollectionViewCell.m; sourceTree = "<group>"; };
 		ED865C141C11316400E94866 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		ED865C151C11316400E94866 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		ED955E7B1C35041600429530 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				ED5799FD1C3CA5B500F389A1 /* ImageLibraryViewController.m */,
 				ED4C7E681C3CE2D800A6F525 /* PostToInstagramViewController.h */,
 				ED4C7E691C3CE2D800A6F525 /* PostToInstagramViewController.m */,
+				ED85700C1C3DED5B004F9610 /* NewCollectionViewCell.h */,
+				ED85700D1C3DED5B004F9610 /* NewCollectionViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				ED389F8D1C1A6C2E005D4080 /* MediaFullScreenViewController.m in Sources */,
 				ED7F489E1C27C5490018AD37 /* CircleSpinnerView.m in Sources */,
 				ED7333751C03FD6400C9C630 /* User.m in Sources */,
+				ED85700E1C3DED5B004F9610 /* NewCollectionViewCell.m in Sources */,
 				ED5799FE1C3CA5B500F389A1 /* ImageLibraryViewController.m in Sources */,
 				ED5799F51C3C3D8F00F389A1 /* CropBox.m in Sources */,
 				ED73337B1C03FE4400C9C630 /* Comment.m in Sources */,
