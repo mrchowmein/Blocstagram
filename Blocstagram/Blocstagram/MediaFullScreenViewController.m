@@ -9,11 +9,14 @@
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
 
-@interface MediaFullScreenViewController () <UIScrollViewDelegate>
+@interface MediaFullScreenViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+@property (nonatomic, strong) UITapGestureRecognizer *tapBehindGesture;
+@property (nonatomic, strong) UIWindow *window;
+
 
 @end
 
@@ -56,13 +59,28 @@
     
     [self.tap requireGestureRecognizerToFail:self.doubleTap];
     
+    
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    
+    self.tapBehindGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBehindDetected:)];
+    self.tapBehindGesture.delegate = self;
+    [self.tapBehindGesture setCancelsTouchesInView:NO];
+    
+    [self.view.window addGestureRecognizer:self.tapBehindGesture];
 
     
 }
 
+
+
 #pragma mark - Gesture Recognizers
+
+- (void)tapBehindDetected:(UITapGestureRecognizer *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void) tapFired:(UITapGestureRecognizer *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -154,6 +172,24 @@
     
     [self centerScrollView];
 }
+
+
+#pragma mark - UIGestureRecognizer Delegate
+
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation

@@ -23,6 +23,7 @@
 @property (nonatomic, weak) UIView *lastSelectedCommentView;
 @property (nonatomic, assign) CGFloat lastKeyboardAdjustment;
 
+
 @end
 
 @implementation ImagesTableViewController
@@ -63,14 +64,15 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+
+    
 
 }
 
-- (void) refreshControlDidFire:(UIRefreshControl *) sender {
-    [[DataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
-        [sender endRefreshing];
-    }];
-}
+
+
+
 
 - (void) dealloc
 {
