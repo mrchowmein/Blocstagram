@@ -14,6 +14,7 @@
 		ED5799F81C3C857500F389A1 /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5799F71C3C857500F389A1 /* CropImageViewController.m */; };
 		ED5799FE1C3CA5B500F389A1 /* ImageLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5799FD1C3CA5B500F389A1 /* ImageLibraryViewController.m */; };
 		ED5DBDD11C0638A7001A5AE1 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */; };
+		ED6143021C442E78008E5705 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6143011C442E78008E5705 /* UserTests.m */; };
 		ED7333751C03FD6400C9C630 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7333741C03FD6400C9C630 /* User.m */; };
 		ED7333781C03FDC300C9C630 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7333771C03FDC300C9C630 /* Media.m */; };
 		ED73337B1C03FE4400C9C630 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED73337A1C03FE4400C9C630 /* Comment.m */; };
@@ -68,6 +69,7 @@
 		ED5799FD1C3CA5B500F389A1 /* ImageLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLibraryViewController.m; sourceTree = "<group>"; };
 		ED5DBDCF1C0638A7001A5AE1 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		ED5DBDD01C0638A7001A5AE1 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
+		ED6143011C442E78008E5705 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
 		ED7333731C03FD6400C9C630 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		ED7333741C03FD6400C9C630 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		ED7333761C03FDC300C9C630 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				ED793E951BFD858200E3C27E /* BlocstagramTests.m */,
 				ED793E931BFD858200E3C27E /* Supporting Files */,
+				ED6143011C442E78008E5705 /* UserTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6143021C442E78008E5705 /* UserTests.m in Sources */,
 				ED793E961BFD858200E3C27E /* BlocstagramTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
