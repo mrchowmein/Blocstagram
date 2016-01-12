@@ -38,6 +38,9 @@
 		ED7F489E1C27C5490018AD37 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F489D1C27C5480018AD37 /* CircleSpinnerView.m */; };
 		ED7F48A11C27D36A0018AD37 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7F48A01C27D36A0018AD37 /* LikeButton.m */; };
 		ED865C161C11316400E94866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED865C151C11316400E94866 /* LoginViewController.m */; };
+		ED8CACCA1C44C2FC0042C929 /* MediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8CACC91C44C2FC0042C929 /* MediaTests.m */; };
+		ED8CACCC1C4584DB0042C929 /* ComposeCommentViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8CACCB1C4584DB0042C929 /* ComposeCommentViewTest.m */; };
+		ED8CACCE1C45BF740042C929 /* MediaTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8CACCD1C45BF740042C929 /* MediaTableViewCellTests.m */; };
 		ED955E7D1C35041600429530 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED955E7C1C35041600429530 /* ComposeCommentView.m */; };
 		ED99433B1C3B10FB00466295 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = ED99433A1C3B10FB00466295 /* CameraToolbar.m */; };
 		ED99433E1C3B141100466295 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED99433D1C3B141100466295 /* CameraViewController.m */; };
@@ -106,6 +109,9 @@
 		ED7F48A01C27D36A0018AD37 /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
 		ED865C141C11316400E94866 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		ED865C151C11316400E94866 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ED8CACC91C44C2FC0042C929 /* MediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTests.m; sourceTree = "<group>"; };
+		ED8CACCB1C4584DB0042C929 /* ComposeCommentViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentViewTest.m; sourceTree = "<group>"; };
+		ED8CACCD1C45BF740042C929 /* MediaTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCellTests.m; sourceTree = "<group>"; };
 		ED955E7B1C35041600429530 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
 		ED955E7C1C35041600429530 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		ED9943391C3B10FB00466295 /* CameraToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToolbar.h; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 				ED793E951BFD858200E3C27E /* BlocstagramTests.m */,
 				ED793E931BFD858200E3C27E /* Supporting Files */,
 				ED6143011C442E78008E5705 /* UserTests.m */,
+				ED8CACC91C44C2FC0042C929 /* MediaTests.m */,
+				ED8CACCB1C4584DB0042C929 /* ComposeCommentViewTest.m */,
+				ED8CACCD1C45BF740042C929 /* MediaTableViewCellTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -453,8 +462,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8CACCA1C44C2FC0042C929 /* MediaTests.m in Sources */,
 				ED6143021C442E78008E5705 /* UserTests.m in Sources */,
 				ED793E961BFD858200E3C27E /* BlocstagramTests.m in Sources */,
+				ED8CACCE1C45BF740042C929 /* MediaTableViewCellTests.m in Sources */,
+				ED8CACCC1C4584DB0042C929 /* ComposeCommentViewTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
