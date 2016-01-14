@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "MediaTableViewCell.h"
+#import "Media.h"
 
 @interface MediaTableViewCellTests : XCTestCase
 
@@ -25,9 +26,25 @@
     [super tearDown];
 }
 
-- (void) heightTest {
+
+- (void)heightTest
+
+{
+    NSDictionary *sourceDictionary = @{@"id": @"8675309",
+                                       @"caption" : @{@"text" : @"hello hello"},
+                                       @"image" : @{@"standard_resolution" : @{@":url" : @"http://www.example.com/example.jpg"}},
+                                       @"user" : @{@"id" : @"1234567"},
+                                       };
+    
+    Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
+    
+    UITraitCollection *testTrait = [UITraitCollection traitCollectionWithUserInterfaceIdiom:UIUserInterfaceIdiomPad];
+    
+    CGFloat height = [MediaTableViewCell heightForMediaItem:testMedia width:300 traitCollection:testTrait];
+    
+    
+    XCTAssertEqual(height, 100, @"pass");
     
     
 }
-
 @end
