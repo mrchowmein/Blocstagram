@@ -40,10 +40,10 @@
     
     UITraitCollection *testTrait = [UITraitCollection traitCollectionWithUserInterfaceIdiom:UIUserInterfaceIdiomPad];
     
-    CGFloat height = [MediaTableViewCell heightForMediaItem:testMedia width:300 traitCollection:testTrait];
+    CGFloat height = [MediaTableViewCell heightForMediaItem:testMedia width:640 traitCollection:testTrait];
     
     
-    XCTAssertEqual(height, 100, @"pass");
+    XCTAssertEqual(height, 320, @"pass");
     
     
 }
