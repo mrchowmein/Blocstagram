@@ -37,7 +37,7 @@
     NSDictionary *sourceDictionary = @{@"id": @"8675309",
                                        @"caption" : @{@"text" : @"hello hello"},
                                        @"image" : @{@"standard_resolution" : @{@":url" : @"http://www.example.com/example.jpg"}},
-                                       @"user" : @{@"id" : @"1234567"},
+                                       //@"user" : @{@"id" : @"1234567", @"username": @"fakename", @"full_name": @"fakefullname"},
                                        };
     
     Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
@@ -51,7 +51,7 @@
     
     CGFloat height =  [MediaTableViewCell heightForMediaItem:testMedia width:320 traitCollection:testTrait];
     
-    XCTAssertEqual(height, 426);
+    XCTAssertEqual(height, 138);
     
     
 }
