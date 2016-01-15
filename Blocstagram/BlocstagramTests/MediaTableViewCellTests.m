@@ -12,6 +12,9 @@
 
 @interface MediaTableViewCellTests : XCTestCase
 
+
+//@property (atomic, strong) Media *testMedia;
+
 @end
 
 @implementation MediaTableViewCellTests
@@ -27,9 +30,10 @@
 }
 
 
-- (void)heightTest
+- (void)testHeight
 
 {
+    
     NSDictionary *sourceDictionary = @{@"id": @"8675309",
                                        @"caption" : @{@"text" : @"hello hello"},
                                        @"image" : @{@"standard_resolution" : @{@":url" : @"http://www.example.com/example.jpg"}},
@@ -38,12 +42,16 @@
     
     Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
     
-    UITraitCollection *testTrait = [UITraitCollection traitCollectionWithUserInterfaceIdiom:UIUserInterfaceIdiomPad];
+    //UIImage *samplePicture = [UIImage imageNamed:@"1.jpg"];
     
-    CGFloat height = [MediaTableViewCell heightForMediaItem:testMedia width:640 traitCollection:testTrait];
+    //testMedia.image = samplePicture;
+    
+    UITraitCollection *testTrait = [UITraitCollection traitCollectionWithUserInterfaceIdiom:UIUserInterfaceIdiomPhone];
     
     
-    XCTAssertEqual(height, 320, @"pass");
+    CGFloat height =  [MediaTableViewCell heightForMediaItem:testMedia width:320 traitCollection:testTrait];
+    
+    XCTAssertEqual(height, 426);
     
     
 }
